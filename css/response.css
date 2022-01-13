@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@media screen and (max-width:1200px){
+  #headerIn nav .enb li{
+    display: none;
+  }
+  header h1,#popup h1{
+    width: 31%;
+transform: scale(0.8);
+  }
+  header nav{
+    width: 60%;
+  }
+  #headerIn nav .gnb li .gnbIn{
+    top:103px;
+  }
+  #headerIn nav .gnb li:nth-child(6) ul{
+    padding-left:34%;
+
+  }
+  #headerIn nav .gnb li h2{
+    padding: 10px;
+  }
+  #title .tSlide li{
+    padding-left: 100px;
+  }
+  #title .titleWrap .tap{
+    padding-left: 100px;
+
+  }
+  /* 검색----------------- */
+  .search{
+    width: auto;
+    padding-left: 100px;
+  }
+  /* hot issue------------------------ */
+  #issue h2{
+    padding-left: 30px;
+    padding-bottom: 0;
+  }
+  #issue p{
+   position: initial;
+   padding-top: 0;
+   padding-bottom: 30px;
+  }
+  #issue .issueRight ul{
+    height: auto;
+  }
+  #issue .issueRight ul li{
+    transform: scale(0.7);
+    margin: 0;
+    padding: 0;
+  }
+  #issue .issueRight ul li:nth-child(5),#issue .issueRight ul li:nth-child(7){
+    position: initial;
+  }
+  #issue .issueWrap{
+    padding-left: 30px;
+  }
+  /* inspiration------------------------------- */
+
+  #inspiration .inspiLeft{
+ float: initial;
+ margin: 0 auto;
+ padding-bottom: 100px;
+}
+#inspiration .inspiLeft a img{
+  
+  display: none;
+}
+#inspiration .inspiLeft a.find::before{
+  display: none;
+}
+#inspiration ul{
+  
+  left: 0;
+    justify-content: initial;
+    padding-top: 0;
+    width: 100%;
+    left: 50px;
+  }
+  #inspiration ul li{
+    padding-bottom: 0px;
+    transform: scale(0.8);
+  }
+  #search input{
+    width: 50%;
+  }
+  #irNews div{
+    padding-left: 50px;
+  }
+  #irNews .news{
+    width: 100%;
+  }
+
+  #irNews .news ul li a strong{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:768px){
+  #title .titleWrap .tap{
+    padding-left: 100px;
+  
+  }
+  
+}

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼화페인트</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/aside.css">
+  <link rel="stylesheet" href="https://use.typekit.net/yaa2acq.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/response.css">
+
+  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="js/popupmenu.js"></script>
+  <script type="text/javascript" src="js/title.js"></script>
+  <script type="text/javascript" src="js/business.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      // header hover-------------------------------
+      $("#headerIn nav .gnb li").hover(
+        function () {
+          $("header").addClass("header_bg");
+          $("header h1").addClass("changebg2");
+          $("button i").addClass("black");
+        },
+        function () {
+          $("header").removeClass("header_bg");
+          $("header h1").removeClass("changebg2");
+          $("button i").removeClass("black");
+          if ($(window).scrollTop() >= secTop) {
+            $("header").addClass("header_bg");
+            $("header h1").addClass("changebg2");
+            $("button i").addClass("black");
+          }
+        });
+      // header scroll--------------------------------
+      let secTop = $("#wFind h3").offset().top;
+
+      $(window).on('scroll', headerScroll);
+      headerScroll();
+
+      function headerScroll() {
+
+        if ($(window).scrollTop() >= secTop) {
+          $("header").addClass("header_bg");
+          $("header h1").addClass("changebg2");
+          $("button i").addClass("black");
+        } else {
+          $("header").removeClass("header_bg");
+          $("header h1").removeClass("changebg2");
+          $("button i").removeClass("black");
+        }
+      }
+
+      // aside ani-----------------------------------------------
+      $('aside ul li').hover(
+        function () {
+          $(this).siblings().css('opacity', 0.4);
+        },
+        function () {
+          $(this).siblings().css('opacity', 1);
+        }
+      );
+
+      $('aside h2').click(function () {
+        $('aside').removeClass('asideMoveBack');
+        $('aside').addClass('asideMove');
+        $('aside h2').hide();
+
+      });
+      $('aside button.close').click(function () {
+        $('aside').addClass('asideMoveBack');
+        $('aside h2').show();
+      });
+
+
+
+      // hot issue fixed---------------------------------
+      let findTop = $("#issue .issueRight ul").offset().top;
+      let inspiTop = $("#inspiration").offset().top - $(window).height();
+      let aboutH = inspiTop - findTop + 200;
+      console.log(aboutH);
+      $(window).on('scroll', issueControl);
+      issueControl();
+
+      function issueControl() {
+        let scrollT = $(window).scrollTop();
+
+        if (scrollT >= findTop) {
+          $('#issue .issueLeft').css('position', 'fixed');
+        }
+        if (scrollT > inspiTop) {
+          $('#issue .issueLeft').css({
+            'position': 'absolute',
+            'top': aboutH
+          });
+        }
+        if (scrollT < inspiTop && scrollT >= findTop) {
+          $('#issue .issueLeft').css({
+            'position': 'fixed',
+            'top': 200
+          });
+        }
+        if (scrollT < findTop) {
+          $('#issue .issueLeft').css({
+            "position": "absolute"
+          });
+        }
+      }
+
+      // inspiration zoom--------------
+      var colorBg = ["#005171", "#7e9aaa", "#98b2c6", "#bdc8d2"];
+      var colorN;
+
+      $('#inspiration ul li button.zoom').click(function () {
+
+        $('#inspiration').append('<div class="colorPopup"></div>');
+        $('.colorPopup').append('<button class="close"></button>');
+
+
+        colorN = $(this).parent().index();
+        $('#inspiration li:eq(' + colorN + ') h3,#inspiration ul li:eq(' + colorN + ') p').clone().appendTo(
+          '.colorPopup');
+        $('.colorPopup h3').wrap('<div class="bottom"></div>');
+        $('.colorPopup p').appendTo('.colorPopup .bottom');
+
+        console.log('#inspiration li:eq(' + colorN + ')')
+
+
+        $('.colorPopup button.close').click(function () {
+          $('.colorPopup').remove();
+        });
+
+
+        $('.colorPopup').css('background-color', colorBg[colorN]);
+
+      });
+
+
+      // footer click-------------------------------
+      var a = 0;
+      $('footer .footerIn .f3 span a').click(function () {
+        if (a == 0) {
+          $('footer .footerIn .f3 ul').css('opacity', 1);
+          $('footer .footerIn .f3 span a .material-icons-outlined').addClass('rotate');
+          a = 1;
+        } else {
+          $('footer .footerIn .f3 ul').css('opacity', 0);
+          $('footer .footerIn .f3 span a .material-icons-outlined').removeClass('rotate');
+          a = 0;
+        }
+        return false;
+
+      });
+
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- 상단영역--------------------------------------- -->
+  <header>
+    <div id="headerIn">
+      <h1><a href="">삼화페인트</a></h1>
+      <nav class="flex-between">
+        <ul class="gnb flex-between">
+          <li>
+            <h2>Products</h2>
+            <ul class="gnbIn flex-between">
+              <li><a href="">제품소개</a></li>
+              <li><a href="">자료검색</a></li>
+              <li><a href="">페인팅 가이드</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Color</h2>
+            <ul class="gnbIn flex-between">
+              <li><a href="">컬러검색</a></li>
+              <li><a href="">건축컬러디자인</a></li>
+              <li><a href="">컬러디자인센터</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Culture</h2>
+            <ul class="gnbIn flex-between">
+              <li><a href="">#Live</a></li>
+              <li><a href="">뉴스</a></li>
+              <li><a href="">사회공헌</a></li>
+              <li><a href="">케미 X 케미</a></li>
+              <li><a href="">함께해요</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Company</h2>
+            <ul class="gnbIn flex-between">
+              <li><a href="">회사소개</a></li>
+              <li><a href="">히스토리</a></li>
+              <li><a href="">책임경영</a></li>
+              <li><a href="">인재채용</a></li>
+              <li><a href="">사업장</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>IR</h2>
+            <ul class="gnbIn flex-between">
+              <li><a href="">투자정보</a></li>
+              <li><a href="">경영정보</a></li>
+              <li><a href="">재무정보</a></li>
+              <li><a href="">IR 미팅신청</a></li>
+            </ul>
+          </li>
+          <li>
+            <h2>Customer</h2>
+            <ul class="gnbIn flex-between hide">
+              <li><a href="">대리점찾기</a></li>
+              <li><a href="">대리점스토리</a></li>
+              <li><a href="">분석시스템</a></li>
+              <li><a href="">고객상담</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="enb flex-between">
+          <li><a href="">인재채용</a></li>
+          <li><a href="">대리점 웹 주문</a></li>
+          <li>
+            <select name="" id="">
+              <option value="">KOR</option>
+              <option value="">ENG</option>
+              <option value="">CHN</option>
+            </select>
+          </li>
+          <li><a href="">0</a></li>
+          <li><a href="">search</a></li>
+        </ul>
+        <button><i>사이트맵</i></button>
+      </nav>
+    </div>
+  </header>
+  <hr class="hide">
+  <!-- 타이틀영역-------------------------------------------- -->
+  <div id="title">
+    <div class="titleWrap">
+      <ul class="tSlide">
+        <li class="slide slide1">
+          <h2>Andy Warhol<br>Exhibition</h2>
+          <h3>THE HYUNDAI SEOUL<br>안심닥터 시공 사례</h3>
+          <a href="">자세히 보기</a>
+        </li>
+        <li class="slide slide2">
+          <a href="">자세히 보기</a>
+        </li>
+        <li class="slide slide3">
+          <h2>All New iLux</h2>
+          <h3>생활방수, 이지클리닝 기능을 더한<br>벽면/가구용 페인트</h3>
+          <a href="">자세히 보기</a>
+        </li>
+      </ul>
+      <ul class='tap'>
+        <li class="wrapper">
+          <div class="left">
+            <span class="rot"></span>
+          </div>
+          <div class="right">
+            <span class="rot"></span>
+          </div>
+          <button class="diamond">1페이지</button>
+        </li>
+        <li class="wrapper">
+          <div class="left">
+            <span class="rot"></span>
+          </div>
+          <div class="right">
+            <span class="rot"></span>
+          </div>
+          <button class="diamond">2페이지</button>
+        </li>
+        <li class="wrapper">
+          <div class="left">
+            <span class="rot"></span>
+          </div>
+          <div class="right">
+            <span class="rot"></span>
+          </div>
+          <button class="diamond">3페이지</button>
+        </li>
+      </ul>
+      <section id="wFind">
+        <div class="search w1200">
+          <h3>무엇을 찾으시나요?<span class="block">제품, 컬러, 대리점을 검색해보세요</span></h3>
+          <input type="text" placeholder="제품,컬러,대리점 검색">
+          <p>추천 검색어</p>
+          <h3 class="hash"><a href="">#안심닥터</a><a href="">#그린방수마스터</a><a href="">#아이럭스</a><a href="">#아이생각</a></h3>
+        </div>
+      </section>
+      <div class="titleImg">
+        <div class="img img1" style='background-image: url(img/bodybg_0.jpg);'></div>
+        <div class="img img2" style='background-image: url(img/bodybg_1.jpg);'></div>
+        <div class="img img3" style='background-image: url(img/bodybg_2.jpg);'></div>
+      </div>
+      <aside>
+        <h2>Feedback</h2>
+        <p>How would you rate your experience?</p>
+        <ul>
+          <li><a href=""><span class="material-icons-outlined">
+                sentiment_very_dissatisfied
+              </span><span>매우나쁨</span></a></li>
+          <li><a href=""><span class="material-icons-outlined">
+                sentiment_dissatisfied
+              </span><span>나쁨</span></a></li>
+          <li><a href=""><span class="material-icons-outlined">
+                sentiment_neutral
+              </span><span>보통</span></a></li>
+          <li><a href=""><span class="material-icons-outlined">
+                sentiment_satisfied
+              </span><span>좋음</span></a></li>
+          <li><a href=""><span class="material-icons-outlined">
+                emoji_emotions
+              </span><span>매우좋음</span></a></li>
+        </ul>
+        <p>Not using <a href="">Hotjar</a> yet?</p>
+        <button class="close">닫기</button>
+      </aside>
+    </div>
+  </div>
+  <hr class="hide">
+  <!-- 메인영역--------------------------------------- -->
+  <main>
+    <section id="issue">
+      <div class="w1200">
+        <h2>Hot Issue</h2>
+        <p>트렌드부터 다양한 이슈 및 SNS,<br>삼화페인트의 모든 소식들을 만나보세요.</p>
+        <div class="issueWrap">
+          <div class="issueLeft">
+            <img
+              src="https://www.samhwa.com/files/board/live/1621923170031_%EC%82%AC%EB%B3%B438%ED%98%B8_%ED%91%9C%EC%A7%80.JPG"
+              alt="">
+            <h3>2021<br>Spring(75th Anniversary)<a href="" class="block">PDF 보기</a></h3>
+            <a href="">사보 전체보기</a>
+          </div>
+          <div class="issueRight">
+            <ul>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1623885898466_103.jpg" alt="">
+                  </figure>
+                  <h3>더현대 서울 앤디워홀 전시 시공 </h3>
+                  <p>삼화페인트 대표 친환경페인트 아이생각 수성내부프로와 항바이러스
+                    페인트 안심닥터로 시공된 안심공간을 만나보세요</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1623712060884_1.jpg" alt="">
+                  </figure>
+                  <h3>아고라이팅X삼화페인트</h3>
+                  <p>새로운 빛을 만나다, 실내인테리어의 뉴 웨이브
+                    삼화페인트X아고라이팅 콜라보 in 서울리빙디자인페어</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1611729291123_1%EC%8D%B8%ED%95%84.png" alt="">
+                  </figure>
+                  <h3>EP.01 페인트 오픈하기</h3>
+                  <p>페인트 오픈방법부터 V컷 페인팅이라는 꿀팁까지!<br>
+                    셀프페인팅의 첫 발걸음 시작해볼까요?</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1615421733695_KakaoTalk_20210310_151546842.png"
+                      alt="">
+                  </figure>
+                  <h3>투톤라이브 ep3. 릴보이
+                    Freak & FRIENDS</h3>
+                  <p>[Samhwa X lIlBOI] 투톤라이브 3월의 주인공 릴보이, 시고도 달콤한 풋사과같은 삶에, 꽃길이 가득이길 바라는 꿈을 담은 이달의 컬러 풋사과연두색🍏 X 푸른꿈색📘
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1609721288227_1.jpg" alt="">
+                  </figure>
+                  <h3>항바이러스 페인트 ‘안심닥터’ 추천</h3>
+                  <p>항바이러스 원료 함유, 바이러스 99.9% 사멸…1월5일 대리점 출시 CGV 강남, 인천시청, 해썹인증 공장, 어린이 이용시설 등 적용 완료</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1608821389890_img-issue-03.jpg" alt="">
+                  </figure>
+                  <h3>생활방수, 이지클리닝 기능을 더한 올 뉴 아이럭스</h3>
+                  <p>실내 벽면/벽지용, 방문/가구용, 실내외 겸영 고채도 하이크로마 3종</p>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <figure>
+                    <span>Brand News</span>
+                    <img src="https://www.samhwa.com/files/hotissue/1608821418392_img-issue-06.jpg" alt="">
+                  </figure>
+                  <h3>반려동물인증 받은 펫 러브 컬러와 펫테리어 추천</h3>
+                  <p>모든 집사들의 가장 큰 고민. 반려견과 반려묘가 머물기 좋은
+                    최상의 공간 만드는 방법</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="inspiration">
+      <div class="w1200">
+        <h2>Color Inspiration</h2>
+        <p>집안 인테리어를 cool하게 만들어 줄<br>블루톤 컬러로 인테리어에 변화를 주세요</p>
+        <div class="inspiLeft">
+          <a href=""><img src="https://www.samhwa.com/files/color/1608644895818_color_inspir_concept.jpg" alt=""></a>
+          <a href="" class="find">Find a Store</a>
+        </div>
+        <ul>
+          <li>
+            <span>
+              <i></i>
+              <h3>Teal Blue</h3>
+              <p>SH S 5040-B (0153D)</p>
+            </span>
+            <button class="copy">복사하기</button><button class="zoom">크게보기</button>
+          </li>
+          <li>
+            <span>
+              <i></i>
+              <h3>Provence Blue</h3>
+              <p>SH S 3020-B (0088D)</p>
+            </span>
+            <button class="copy">복사하기</button><button class="zoom">크게보기</button>
+          </li>
+          <li>
+            <span>
+              <i></i>
+              <h3>Gray Blue</h3>
+              <p>SH S 2020-R90B (0087C)</p>
+            </span>
+            <button class="copy">복사하기</button><button class="zoom">크게보기</button>
+          </li>
+          <li>
+            <span>
+              <i></i>
+              <h3>Winter Sky</h3>
+              <p>SH S 1510-R90B (0087B)</p>
+            </span>
+            <button class="copy">복사하기</button><button class="zoom">크게보기</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="business">
+      <div class="inner">
+        <h2>Samhwa<br>Business Area</h2>
+        <div class="businessContainer">
+          <p>친환경에 바탕을 둔, 글로벌 경쟁력을 갖춘<br>종합도료기업 삼화페인트</p>
+          <div class="slide1">
+            <ul class="slides sliderin1">
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-01.jpg" alt="건축용" />
+                  <strong>건축용
+                    <span>70년 전통의 대한민국 No.1 건축용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-02.jpg" alt="방수/바닥용" />
+                  <strong>방수/바닥용
+                    <span>옥상과 지하주차장, 운동장 바닥까지 견고한 품질의<br>방수 바닥용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-03.jpg" alt="내화/방염" />
+                  <strong>내화/방염
+                    <span>강력한 내화성능과 재해 방지를 위한 내화/방염 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-04.jpg" alt="목재/목공용" />
+                  <strong>목재/목공용
+                    <span>목재보호의 대명사 ‘월드스테인’과<br>목공 전문 브랜드 ‘에코우드’까지 전문가가 선호하는<br>목재/목공용 도료
+                    </span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-05.jpg" alt="공업용" />
+                  <strong>공업용
+                    <span>다양한 색상, 고도의 내구성, 뛰어난 경제성의<br>공업용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-06.jpg" alt="PCM용" />
+                  <strong>PCM용
+                    <span>고급스러운 외관을 표현하는 PCM용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-07.jpg" alt="분체용" />
+                  <strong>분체용
+                    <span>국내·외 산업계에 생산 공급하는 환경 친화형<br>분말 분체용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-08.jpg" alt="제관용" />
+                  <strong>제관용
+                    <span>식품 및 음료캔 내용물의 장기보존에 우수한 제관용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="slide2">
+            <ul class="slides sliderin2">
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-01.jpg" alt="건축용" />
+                  <strong>건축용
+                    <span>70년 전통의 대한민국 No.1 건축용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-02.jpg" alt="방수/바닥용" />
+                  <strong>방수/바닥용
+                    <span>옥상과 지하주차장, 운동장 바닥까지 견고한 품질의<br>방수 바닥용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-03.jpg" alt="내화/방염" />
+                  <strong>내화/방염
+                    <span>강력한 내화성능과 재해 방지를 위한 내화/방염 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-04.jpg" alt="목재/목공용" />
+                  <strong>목재/목공용
+                    <span>목재보호의 대명사 ‘월드스테인’과<br>목공 전문 브랜드 ‘에코우드’까지 전문가가 선호하는<br>목재/목공용 도료
+                    </span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-05.jpg" alt="공업용" />
+                  <strong>공업용
+                    <span>다양한 색상, 고도의 내구성, 뛰어난 경제성의<br>공업용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-06.jpg" alt="PCM용" />
+                  <strong>PCM용
+                    <span>고급스러운 외관을 표현하는 PCM용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-07.jpg" alt="분체용" />
+                  <strong>분체용
+                    <span>국내·외 산업계에 생산 공급하는 환경 친화형<br>분말 분체용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-08.jpg" alt="제관용" />
+                  <strong>제관용
+                    <span>식품 및 음료캔 내용물의 장기보존에 우수한 제관용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="slide3">
+            <ul class="slides sliderin3">
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-01.jpg" alt="건축용" />
+                  <strong>건축용
+                    <span>70년 전통의 대한민국 No.1 건축용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-02.jpg" alt="방수/바닥용" />
+                  <strong>방수/바닥용
+                    <span>옥상과 지하주차장, 운동장 바닥까지 견고한 품질의<br>방수 바닥용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-03.jpg" alt="내화/방염" />
+                  <strong>내화/방염
+                    <span>강력한 내화성능과 재해 방지를 위한 내화/방염 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-04.jpg" alt="목재/목공용" />
+                  <strong>목재/목공용
+                    <span>목재보호의 대명사 ‘월드스테인’과<br>목공 전문 브랜드 ‘에코우드’까지 전문가가 선호하는<br>목재/목공용 도료
+                    </span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-05.jpg" alt="공업용" />
+                  <strong>공업용
+                    <span>다양한 색상, 고도의 내구성, 뛰어난 경제성의<br>공업용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-06.jpg" alt="PCM용" />
+                  <strong>PCM용
+                    <span>고급스러운 외관을 표현하는 PCM용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-07.jpg" alt="분체용" />
+                  <strong>분체용
+                    <span>국내·외 산업계에 생산 공급하는 환경 친화형<br>분말 분체용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+              <li>
+                <a href=''>
+                  <img src="img/img-ba-08.jpg" alt="제관용" />
+                  <strong>제관용
+                    <span>식품 및 음료캔 내용물의 장기보존에 우수한 제관용 페인트</span>
+                  </strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <nav>
+            <button class="prev"><span class="material-icons-outlined">
+                arrow_back
+              </span></button>
+            <button class="next"><span class="material-icons-outlined">
+                arrow_forward
+              </span></button>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <section id="irNews">
+      <div class="w1200">
+        <div class="ir">
+          <h2>IR</h2>
+          <nav class="stock">
+            <h3>삼화페인트<span>000390</span></h3>
+          </nav>
+        </div>
+        <div class="news">
+          <h2>News</h2>
+          <ul>
+            <li>
+              <a href="">
+                <strong>삼화페인트, ‘어린이 교통안전 릴레이 챌린지’ 동참</strong>
+                <p>오진수 대표는 신입사원들과 함께 교통안전 표어를 들고 어린이 교통안전 릴레이 챌린지에 동참했다.</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <strong>철골 구조물용 친환경 중방식 도료 개발 </strong>
+                <p>삼화페인트, ‘다습 환경 조건에서 도장이 가능한 철골 구조물용 친환경 중방식 도료 조성물 및 이를 사용한 친환경 중방식 도막’ 특허 취득
+                  내수성, 방청성 뛰어난 친환경 중방식 도료 개발… 슈퍼워터 시리즈 출시 완료</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <strong>창립 75주년 기념 비전선포식 개최</strong>
+                <p>75년을 넘어 100년으로…비전선포식 통해 ‘내일로 가는 새 길’ 찾아
+                  業본질 ‘보호’…삼화의 프로텍션 테크놀로지로 꼭 필요한 기업 될 것</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="search">
+      <div class="search">
+        <input type="text" placeholder="제품,컬러,대리점 검색">
+        <p>추천 검색어</p>
+        <h3 class="hash"><a href="">#안심닥터</a><a href="">#그린방수마스터</a><a href="">#아이럭스</a><a href="">#아이생각</a></h3>
+      </div>
+    </section>
+  </main>
+  <hr class="hide">
+  <!-- 하단영역----------------------------------------------- -->
+  <footer>
+    <div class="footerIn">
+      <div class="f1">
+        <ul>
+          <li><a href="">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+          <li><a href="">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a></li>
+          <li><a href="">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+        </ul>
+        <div class="f1In">
+          <p>삼화페인트공업(주)<span>대표이사: 오진수, 류기붕</span></p>
+          <p>서울본사: 서울 종로구 돈화문로 58 (묘동)</p>
+          <p>안산공장: 경기도 안산시 단원구 별망로 178 (성곡동)</p>
+        </div>
+        <p class="copyright">ⓒ 2020 SAMHWA PAINTS INDUSTRIAL CO., LTD</p>
+      </div>
+      <div class="f2">
+        <p>Technical Service Center<strong class="block">1544-5357</strong></p>
+      </div>
+      <div class="f3">
+        <span>
+          <a href="">Family Site<span class="material-icons-outlined">
+              expand_more
+            </span></a>
+        </span>
+        <ul>
+          <li><a href="">홈앤톤즈</a></li>
+          <li><a href="">컬러디자인센터</a></li>
+          <li><a href="">파우톤 분체도료</a></li>
+          <li><a href="">카로클 자동차 도료</a></li>
+          <li><a href="">삼화페인트 구매포털</a></li>
+          <li><a href="">대리점전용 시스템</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+}
+h2{
+  font-family: operetta-12, serif; 
+}
+.gnb li h2{
+  font-family: graphie, sans-serif; 
+}
+footer .f1 .f2{
+  font-family: graphie, sans-serif; 
+}

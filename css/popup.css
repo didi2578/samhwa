@@ -1,0 +1,112 @@
+@charset "UTF-8";
+#popup{
+  width: 100%;
+background-color: #fff;
+height: 100%;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 4;
+  position: fixed;
+}
+#popup h1 a{
+  background-image: url(https://www.samhwa.com/resources/images/common/logo-samhwa-red.svg);
+  vertical-align: -19px;
+
+}
+#popup i.popupSideBg{
+  background-image: url(https://www.samhwa.com/resources/images/common/bg_gnb_1.jpg);
+display: block;
+width: 650px;
+position: absolute;
+right: 0;
+min-height: 1080px;
+height: 100%;
+top: 0;
+box-sizing: border-box;
+background-position: right top;
+background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-size: auto;
+background-size: contain;
+  opacity: 0;
+}
+#popup .enb{
+width: 45%;
+  margin-left: 20%;
+  position: relative;
+  top: -51px;
+}
+
+#popup .gnb{
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 164px;
+  padding-top: 100px;
+  padding-left: 194px;
+}
+#popup .gnb li{
+  display: initial;
+  cursor: pointer;
+}
+ /* #popup .gnb li:hover .gnbIn a{
+  opacity: 1;
+}   */
+#popup .gnb h2{
+  line-height: 1.33;
+font-size: 48px;
+font-weight: 500;
+display: block;
+padding: 10px 0;
+  width: 230px;
+  color: #000 !important;
+  font-family: operetta-12, serif;
+}
+#popup .gnb li .gnbIn{
+  flex-direction: column;
+  position: absolute;
+  left: 404px;
+  top: 120px;
+  width: 400px;
+}
+#popup .gnb li .gnbIn a{
+  margin-top: 20px;
+  font-size: 16px;
+position: relative;
+font-weight: 500;
+line-height: 1.5;
+letter-spacing: -.5px;
+left: 50px;
+opacity: 0;
+  display: block;
+  color: #000;
+}
+#popup button{
+  width: 36px;
+height: 36px;
+font-size: 0;
+position: absolute;
+cursor: pointer;
+z-index: 10;
+top: 53px;
+background: none;
+border: none;
+right: 30px;
+}
+button i.x{
+  transition: background 0s 0.3s;
+ background: none;
+}
+button i.x::before{
+      background: #000; 
+      transform: rotate(45deg);
+      transition-delay: 0s, 0.3s;
+      top: 0;
+}
+button i.x::after{
+background: #000;
+transform: rotate(-45deg);
+bottom: 0;
+  transition-delay: 0s, 0.3s;
+}

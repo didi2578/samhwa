@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*{
+  margin:0;
+  padding:0;
+  line-height:1; 
+}
+html,body{
+  height: 100%;
+}
+body{
+  overflow-y: scroll;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+  color: #000;
+  font-weight: normal;    /*글자두께는 노말하게 */
+}
+ul,ol{
+  list-style: none;
+/*  점 표시나 번호 없애기  */
+}
+a{
+  text-decoration: none; /* 밑줄없애기 */
+  color: #000;
+}

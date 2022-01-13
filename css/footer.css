@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* 하단영역----------------------- */
+footer{
+  background-color: #fff;
+  padding: 80px 0;
+}
+footer .footerIn{
+  display: flex;
+  justify-content: center;
+}
+footer .footerIn .f1{
+  
+  width: 33%;
+}
+footer .footerIn .f1 ul{
+  
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+footer .footerIn .f1 ul li{
+  
+}
+footer .footerIn .f1 ul li a{
+  
+  font-size: 21px;
+}
+footer .footerIn .f1 .f1In{
+
+}
+footer .footerIn .f1 .f1In p{
+
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: -0.5px;
+}
+footer .footerIn .f1  p.copyright{
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 22px;
+}
+footer .footerIn .f2{
+  
+  width: 33%;
+}
+footer .footerIn .f2 p{
+  
+  font-size: 14px;
+  line-height: 1.71;
+}
+footer .footerIn .f2 p strong{
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+footer .footerIn .f3{
+  position: relative;
+}
+footer .footerIn .f3 ul{
+  position: absolute;
+  left: 0;
+bottom: 166px;
+  width: 100%;
+  border: 2px solid;
+  background-color: #fff;
+  opacity: 0;
+  transition: .3s ease all;
+}
+footer .footerIn .f3 span{
+
+}
+footer .footerIn .f3 span a{
+  font-family: graphie, sans-serif; 
+  width: 220px;
+height: 29px;
+display: block;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 14px;
+  position: relative;
+}
+footer .footerIn .f3 span a .material-icons-outlined{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.rotate{
+  transform: rotate(180deg);
+  top: -6px !important;
+}
+footer .footerIn .f3 ul li{
+  
+}
+footer .footerIn .f3 ul li a{
+  display: block;
+font-size: 16px;
+line-height: 28px;
+padding: 12px 16px;
+letter-spacing: -0.7px;
+}

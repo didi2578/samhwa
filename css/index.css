@@ -1,0 +1,619 @@
+@charset "UTF-8";
+/* 메인영역 -------------------------*/
+body{
+   /*! height: 100%; */
+/*! background-attachment: fixed; */
+  /*! background-size: cover; */
+/*! background-repeat: no-repeat; */
+   /*! background-image: url(../img/1623888070250.png); */
+}
+main{
+}
+/* what---------------------------------------- */
+#wFind{
+ height: 1080px;
+box-sizing: border-box;
+padding-top: 400px;
+z-index: 2;
+position: relative;
+}
+.search{
+ width: 1180px;
+/*! margin: auto; */
+/*! box-sizing: border-box; */
+/*! position: relative; */
+}
+.search h3{
+   color: #fff;
+   font-size: 37px;
+   line-height: 1.7;
+   letter-spacing: -1.5px;
+   font-weight: 500;
+}
+.search input{
+  width: 70%;
+  color: #888;
+  border: none;
+  font-size: 24px;
+  line-height: 36px;
+  height: 36px;
+  padding: 20px 0 20px 50px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.search p{
+   color: #fff;
+   font-size: 19px;
+   letter-spacing: -0.5px;
+}
+.search h3.hash{
+   color: #fff;
+   font-size: 24px;
+   font-weight: 500;
+   letter-spacing: -1px;
+  line-height: 1.67;
+}
+.search h3.hash a{
+color:#fff;
+margin-right: 8px;
+}
+.titleImg{
+  position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+}
+.titleImg .img{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  display: block;
+  position: absolute;
+  opacity: 0;
+   transition: all .5s ease-in-out;
+}
+.showing{
+      opacity: 1 !important;
+    }
+/* hot issue------------------------------------------------------ */
+#issue{
+  background-color: #fff;
+  overflow: hidden;
+}
+#issue div{
+  overflow: visible;
+  position: relative;
+}
+#issue h2{
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-bottom: 40px;
+}
+#issue p{
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: -0.7px;
+  font-weight: normal;
+  padding: 40px 0 0 200px;
+  position: absolute;
+  top: 100px;
+  }
+#issue .issueWrap{
+  position: relative;
+} 
+#issue .issueLeft{
+  width: 9%;
+  position: absolute;
+top: 200px;
+}
+#issue .issueLeft img{
+ width: 180px;
+height: 232px;
+overflow: hidden;
+display: block;
+ box-sizing: border-box;
+}
+#issue .issueLeft h3{
+ font-family: graphie, sans-serif; 
+  font-weight: bold;
+  margin-top: 20px;
+margin-bottom: 10px;
+font-size: 20px;
+font-weight: bold;
+line-height: 1.5;
+}
+#issue .issueLeft h3 a{
+  
+  font-weight: normal;
+  margin-top: 15px;
+  font-size: 16px;
+}
+#issue .issueLeft a{
+  display: block;
+  font-size: 12px;
+  letter-spacing: -0.38px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+#issue .issueRight{
+  position: relative;
+  left: 180px;
+  display: inline-block;
+}
+#issue .issueRight ul{
+  display: flex;
+  flex-wrap: wrap;
+  height: 2670px;
+}
+#issue .issueRight ul li{
+  width: 440px;
+  padding-left: 100px;
+  margin-bottom: 140px;
+}
+#issue .issueRight ul li:nth-child(5){
+  position: relative;
+  top: -250px;
+}
+#issue .issueRight ul li:nth-child(7){
+   position: relative;
+  top: -350px;
+}
+#issue .issueRight ul li:first-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  
+}
+#issue .issueRight ul li a{
+  
+}
+#issue .issueRight ul li a figure{
+  
+  position: relative;
+}
+#issue .issueRight ul li a figure img{
+  
+  width: 100%;
+}
+#issue .issueRight ul li a figure span{
+  
+  color: #888;
+  font-size: 20px;
+  font-family: graphie, sans-serif;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: 0% 100%;
+  bottom: 0;
+  padding-bottom: 15px;
+}
+#issue .issueRight ul li a h3{
+  margin: 20px 0 20px;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+#issue .issueRight ul li a p{
+ font-size: 16px;
+line-height: 1.5;
+letter-spacing: -0.5px;
+ padding: 0;
+ position: initial;
+}
+/* inspiration-------------------------------------------------- */
+#inspiration{
+  background-image: url(https://www.samhwa.com/files/color/1608644895816_color_inspir_bg.jpg);
+  background-size: cover;
+  height: 2000px;
+  transition: .3s all ease-in;
+}
+/* 버튼클릭팝업----------------- */
+#inspiration .colorPopup{
+    transition: .3s all ease-in;
+}
+.colorPopup{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: .5s all ease-out;
+}
+.colorPopup button.close{
+  top: 22px;
+  background: none;
+}
+.colorPopup button.close::before{
+  background: #000;
+  width: 25px;
+}
+.colorPopup button.close::after{
+   background: #000;
+   width: 25px;
+}
+.colorPopup .bottom{
+  background-color: #fff;
+  color: #333;
+  display:flex;
+  gap:30px;
+  padding:20px;
+  box-sizing:border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+}
+.colorPopup .bottom h3{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "graphie",'Noto Sans KR', sans-serif;
+}
+.colorPopup .bottom p{
+  height: 100%;
+  font-size: 20px !important;
+  color: #000 !important;
+  padding: initial !important;
+  font-family: "graphie",'Noto Sans KR', sans-serif;
+}
+
+
+
+#inspiration div{
+  overflow: visible;
+}
+#inspiration h2{
+  color: #fff;
+  padding-top: 200px;
+text-align: center;
+font-size: 144px;
+line-height: 172px;
+letter-spacing: -5px;
+font-weight: 500;
+}
+#inspiration p{
+  color: #fff;
+font-size: 20px;
+line-height: 1.8;
+letter-spacing: -1px;
+  padding: 50px 0;
+  padding-left: 21%;
+  padding-bottom: 100px;
+}
+#inspiration .inspiLeft{
+
+  width: 46%;
+  float: left;
+}
+#inspiration .inspiLeft a{
+
+  color: #fff;
+}
+#inspiration .inspiLeft a img{
+
+  width: 100%;
+}
+#inspiration .inspiLeft a.find{
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 100px;
+  position: relative;
+}
+#inspiration .inspiLeft a.find::before{
+  content: '';
+position: absolute; left: 31%; top: 19%; 
+width: 25px;
+height: 25px;
+background-image: url(../img/place_white_24dp.svg);
+}
+
+#inspiration ul{
+
+  width: 54%;
+  display: flex;
+  float: right;
+  flex-wrap: wrap;
+  padding-top: 224px;
+  justify-content: space-between;
+  position: relative;
+  left: 83px;
+}
+#inspiration ul li{
+  padding-bottom: 60px;
+  position: relative;
+}
+#inspiration ul li:nth-child(odd){
+  position: relative;
+  top:150px;
+}
+ #inspiration ul li span{
+  box-sizing: border-box;
+  width: 290px;
+  padding: 4px;
+  background: #fff;
+  display: block;
+} 
+#inspiration ul li span i{
+  display: block;
+  width: 100%;
+  height: 272px;
+}
+#inspiration ul li:nth-child(1) span i{
+   background-color: #005171;
+}
+#inspiration ul li:nth-child(2) span i{
+  background-color: #7E9AAA;
+}
+#inspiration ul li:nth-child(3) span i{
+  background-color: #98B2C6;
+}
+#inspiration ul li:nth-child(4) span i{
+  background-color: #BDC8D2;
+}
+#inspiration ul li button{
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+  margin-left: 10px;
+  position: relative;
+  left: 65%;
+  top: -36%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+#inspiration ul li button.copy{
+  background-image: url(../img/icon1.svg);
+}
+#inspiration ul li button.zoom{
+  background-image: url(../img/icon2.svg);
+}
+#inspiration ul li span h3{
+
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 12px 0 12px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #111;
+}
+#inspiration ul li span p{
+display: block;
+line-height: 1.43;
+color: #111;
+letter-spacing: 0.5px;
+font-size: 14px;
+padding: 4px 12px 20px 12px;
+box-sizing: border-box;
+}
+/* business---------------------------------- */
+#business{
+  padding-top: 160px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 240px;
+  width: 100%;
+  height: 1114px;
+  background: #fff
+}
+#business .inner{
+  max-width: 1200px;
+  margin: 0 auto;
+
+  position: relative;
+}
+#business h2{
+  font-size: 80px;
+line-height: 1.15;
+color: #000;
+font-weight: 500;
+}
+.businessContainer{
+  position: relative;
+}
+.businessContainer p{
+  position: absolute;
+  left: 160px;
+  top: 60px;
+  line-height: 1.8;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+.businessContainer div{
+  position: relative;
+  overflow: hidden;
+  margin-top: 200px;
+  width: 580px;
+  height: 870px;
+}
+
+.businessContainer .slide2{
+  left: 640px;
+margin-top: -150px;
+width: 480px;
+height: 720px;
+position: absolute;
+top: 0;
+}
+.businessContainer .slide3{
+  left: 1180px;
+  width: 480px;
+  height: 720px;
+  position: absolute;
+  top: 0;
+  margin-top: 0;
+}
+.businessContainer ul{
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  
+}
+.businessContainer ul.animate{
+  
+  transition: 0.5s ease-out;
+}
+.businessContainer ul li{
+box-sizing: border-box; 
+float: left;
+color: #fff;
+cursor: pointer;
+width: 580px;
+height: 870px;
+position: relative;
+}
+.businessContainer .slide2 li,.businessContainer .slide3 li{
+  width: 480px;
+  height: 720px;
+}
+.businessContainer ul li img{
+  width: 100%;
+}
+.businessContainer ul li strong{
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  font-size: 40px;
+  letter-spacing: -0.5px;
+  line-height: 1.6;
+  font-weight: 700;
+  box-sizing: border-box;
+  padding: 0 35px;
+  color: #fff;
+}
+.businessContainer ul li span{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 22px;
+  line-height: 1.64;
+  letter-spacing: -0.7px;
+  font-weight: 400;
+  overflow: hidden;
+}
+.sliderin2 span, .sliderin3 span{
+ display: none !important;
+}
+#business nav{
+  position: absolute;
+  left: 68%;
+  bottom: 0;
+}
+#business nav button{
+  width: 62px;
+height: 62px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px #000 solid;
+}
+#business nav button .material-icons-outlined{
+  font-size: 28px;
+  top: 19px;
+  position: absolute;
+  left: 16px;
+}
+
+#business nav button.prev{  
+  margin-right: 80px;
+}
+#business nav button.next{
+
+}
+/* irNews--------------------------------------------- */
+#irNews{
+  background-color: #fff;
+  padding-bottom: 100px;
+}
+#irNews div{
+  display: flex;
+}
+#irNews .ir{
+  flex-direction: column;
+  gap: 0;
+ 
+  width: 25%;
+}
+#irNews .ir .stock{
+
+  padding-top: 37px;
+  width: 100%;
+}
+#irNews .ir .stock h3{
+  font-weight: 500;
+  font-size: 18px;
+}
+#irNews .ir .stock h3 span{
+  font-size: 16px;
+  margin-left: 5px;
+
+}
+#irNews h2{
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+#irNews .news{
+
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 80%;
+}
+#irNews .news ul{
+
+  width: 61%;
+}
+#irNews .news ul li{
+
+  border-bottom: 1px #e5e5e5 solid;
+  padding: 30px 0;
+}
+#irNews .news ul li a{
+
+}
+#irNews .news ul li a strong{
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  color: #000;
+  display: block;
+  margin-bottom: 20px;
+}
+#irNews .news ul li a p{
+
+  letter-spacing: -0.5px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* search------------------------------------------ */
+#search{
+  background-image: url(https://www.samhwa.com/resources/images/contents/main/img-search.jpg);
+  height: 480px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+  background-size: cover; 
+}
+#search div{
+   width: 980px;
+margin: 0 auto;
+}
+#search input{
+ 
+    width: 100%;
+}

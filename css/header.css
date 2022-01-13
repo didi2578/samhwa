@@ -1,0 +1,227 @@
+@charset "UTF-8";
+header{
+position:fixed;
+  width:100%;
+  z-index:3;
+transition: .3s ease-in-out all;
+}
+
+#headerIn{
+  display: flex;
+  max-width: 90%;
+  /*   margin: 0 auto; */
+  padding: 30px 5% 0px 5%;
+  position: relative;
+}
+
+header h1,#popup h1{
+  width: 15%;
+}
+#popup h1{
+  padding: 30px 5%;
+}
+header h1::after{
+  background-image: url(../img/logo-samhwa-white-bf.svg);
+  width: 72px;
+height: 72px;
+  color: #fff;
+  display: inline-block;
+  content: "";
+  
+}
+
+header h1 a,#popup h1 a{
+
+  display: inline-block;
+  background-image: url(../img/index.png);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 90px;
+  height: 32px;
+  margin: 0 auto;
+  vertical-align: 38px;
+  
+}
+
+#headerIn nav{
+transition: all 1s;
+  width: 100%;
+}
+.changebg{
+  background-color: #fff;
+}
+.header_bg .gnb li h2,.header_bg .enb li a{
+   color: #000 !important;
+}
+.changebg2::after{
+  background-image: url(https://www.samhwa.com/resources/images/common/logo-samhwa-red-bf.svg);
+  
+}
+.changebg2 a{
+  background-image: url(https://www.samhwa.com/resources/images/common/logo-samhwa-red.svg);
+  color: #000;
+}
+/* gnb--------------------------------------------- */
+#headerIn nav .gnb{
+  align-items: center;
+  width: 80%;
+  justify-content: initial;
+}
+#headerIn nav .gnb li{
+
+}
+#headerIn nav .gnb li:hover ul{
+  display: flex !important;
+}
+#headerIn nav .gnb li h2{
+  padding: 0 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  /*! padding-bottom: 20px; */
+}
+#headerIn nav .gnb li h2::after{
+  content: "";
+  width: 0%;
+  border-top:4px solid #000;
+  display: block;
+  position: relative;
+  top: 30px;
+  z-index: 2;
+  opacity: 0;
+  margin: 0 auto;
+  transition:all 0.3s;
+}
+#headerIn nav .gnb li:hover h2::after{
+  opacity: 1;
+  width: 100%;
+}
+
+/*  #headerIn nav:hover .gnb li h2{
+    color: #000;
+}  */
+#headerIn nav .gnb li .gnbIn{
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  width: 100%;
+  border-top: 1px #ddd solid;
+  left: 0;
+  top: 109px;
+  padding-left: 17%;
+  border-bottom: 1px #ddd solid;
+  justify-content: normal;
+}
+#headerIn nav .gnb li:nth-child(3) ul{
+  padding-left:25%;
+}
+#headerIn nav .gnb li:nth-child(4) ul{
+  padding-left:30%;
+}
+#headerIn nav .gnb li:nth-child(5) ul{
+  padding-left:35%;
+}
+#headerIn nav .gnb li:nth-child(6) ul{
+  padding-left:35%;
+}
+#headerIn nav .gnb li .gnbIn li{
+padding: 0 24px;
+}
+#headerIn nav .gnb li .gnbIn li a{
+
+  align-items: center;
+  /*! bottom: -20px; */
+  position: relative;
+  line-height: 72px;
+  font-size: 18px;
+  transition: .3s .1s ease-in-out all;
+  
+}
+#headerIn nav .gnb li:hover .gnbIn li a{
+   animation-name:up;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+}
+@keyframes up{
+  1%{
+    opacity: 0;
+    bottom: -20px;
+  }
+  100%{
+    opacity: 1;
+    bottom: 0px; 
+  }
+}
+/* enb-------------------------------------------------- */
+#headerIn nav .enb{
+  align-items: center;
+  width: 40%;
+}
+#headerIn nav .enb li{
+  padding: 30px 0;
+}
+#headerIn nav .enb li a{
+color: #fff;
+  padding: 0 15px;
+}
+#headerIn nav .enb li select{
+}
+#headerIn nav .enb li select option{
+
+}
+button{
+ width: 36px;
+height: 36px;
+font-size: 0;
+position: absolute;
+cursor: pointer;
+z-index: 10;
+top: 53px;
+  background: none;
+  border: none;
+ right: 30px;
+}
+button i{
+  position: absolute;
+display: block;
+width: 28px;
+height: 2px;
+  background: #fff;
+  z-index: 4;
+}
+button i::before{
+      content: '';
+      position: absolute;
+display: block;
+width: 28px;
+height: 2px;
+  background: #fff;
+  transition-delay: 0.5s, 0s;
+transition-duration: 0.3s, 0.2s;
+      top: -9px;
+  transition-property: top,transform;
+  
+}
+button i::after{
+      content: '';
+ position: absolute;
+display: block;
+width: 28px;
+height: 2px;
+  background: #fff;
+  transition-delay: 0.5s, 0s;
+transition-duration: 0.3s, 0.2s;
+      bottom: -9px;
+  transition-property: bottom,transform;
+
+}
+.black{
+    background: #000;
+}
+.black::before{
+    background: #000;
+}
+.black::after{
+    background: #000;
+}
